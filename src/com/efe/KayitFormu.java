@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
 
 public class KayitFormu extends javax.swing.JFrame {
 
-    Baglanti baglan = new Baglanti("rehber", "efe", "sallama");
+    Baglanti baglan = new Baglanti("rehber", "root", "");
     public KayitFormu() {
         initComponents();
     }
@@ -35,12 +35,17 @@ public class KayitFormu extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Kayıt Formu");
+        setAlwaysOnTop(true);
         setBackground(new java.awt.Color(102, 102, 102));
         setLocation(new java.awt.Point(500, 500));
         setResizable(false);
+        setType(java.awt.Window.Type.UTILITY);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowActivated(java.awt.event.WindowEvent evt) {
                 formWindowActivated(evt);
+            }
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
             }
         });
 
@@ -203,8 +208,12 @@ public class KayitFormu extends javax.swing.JFrame {
     }//GEN-LAST:event_btnTemizleActionPerformed
 
     private void btnKapatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKapatActionPerformed
-        System.exit(0);
+        this.dispose();
     }//GEN-LAST:event_btnKapatActionPerformed
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        this.dispose();        // TODO add your handling code here:
+    }//GEN-LAST:event_formWindowClosing
 
     /**
      * @param args the command line arguments
