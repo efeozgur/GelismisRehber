@@ -219,8 +219,8 @@ public class ListeForm extends javax.swing.JFrame {
             ResultSet oku = baglan.oku();
             DefaultTableModel model = (DefaultTableModel) kisi_tablosu.getModel();
             model.setRowCount(0);
-            while (oku.next()) {                
-                Object [] ekle = {oku.getInt("id"), oku.getString("adsoyad"), oku.getString("unvani"), oku.getString("ceptelefonu"), oku.getString("dahilinumarasi"), oku.getString("gorevyeri")};
+            while (oku.next()) {
+                Object[] ekle = {oku.getInt("id"), oku.getString("adsoyad"), oku.getString("unvani"), oku.getString("ceptelefonu"), oku.getString("dahilinumarasi"), oku.getString("gorevyeri")};
                 model.addRow(ekle);
                 lblKayitSayisi.setText("Kayıt : " + String.valueOf(model.getRowCount()));
             }
@@ -230,16 +230,16 @@ public class ListeForm extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowActivated
 
     private void tfAraKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfAraKeyReleased
-     try {
+        try {
             ResultSet oku = baglan.oku(tfAra.getText());
             DefaultTableModel model = (DefaultTableModel) kisi_tablosu.getModel();
             model.setRowCount(0);
-            while (oku.next()) { 
-                Object [] ekle = {oku.getInt("id"), oku.getString("adsoyad"), oku.getString("unvani"), oku.getString("ceptelefonu"), oku.getString("dahilinumarasi"), oku.getString("gorevyeri")};
+            while (oku.next()) {
+                Object[] ekle = {oku.getInt("id"), oku.getString("adsoyad"), oku.getString("unvani"), oku.getString("ceptelefonu"), oku.getString("dahilinumarasi"), oku.getString("gorevyeri")};
                 model.addRow(ekle);
                 lblKayitSayisi.setText("Kayıt : " + String.valueOf(model.getRowCount()));
             }
-            
+
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(ListeForm.class.getName()).log(Level.SEVERE, null, ex);
         }        // TODO add your handling code here:
@@ -247,67 +247,67 @@ public class ListeForm extends javax.swing.JFrame {
     }//GEN-LAST:event_tfAraKeyReleased
 
     private void tfGorevYeriKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfGorevYeriKeyTyped
-     try {
+        try {
             ResultSet oku = baglan.oku(tfGorevYeri.getText(), true);
             DefaultTableModel model = (DefaultTableModel) kisi_tablosu.getModel();
             model.setRowCount(0);
-            while (oku.next()) { 
-                Object [] ekle = {oku.getInt("id"), oku.getString("adsoyad"), oku.getString("unvani"), oku.getString("ceptelefonu"), oku.getString("dahilinumarasi"), oku.getString("gorevyeri")};
+            while (oku.next()) {
+                Object[] ekle = {oku.getInt("id"), oku.getString("adsoyad"), oku.getString("unvani"), oku.getString("ceptelefonu"), oku.getString("dahilinumarasi"), oku.getString("gorevyeri")};
                 model.addRow(ekle);
                 lblKayitSayisi.setText("Kayıt : " + String.valueOf(model.getRowCount()));
             }
-            
+
         } catch (SQLException | ClassNotFoundException ex) {
             JOptionPane.showMessageDialog(this, ex);
         }
         // TODO add your handling code here:
-                // TODO add your handling code here:
+        // TODO add your handling code here:
 
     }//GEN-LAST:event_tfGorevYeriKeyTyped
 
     private void tfCepKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfCepKeyReleased
-     try {
+        try {
             ResultSet oku = baglan.oku(tfCep.getText(), 0f);
             DefaultTableModel model = (DefaultTableModel) kisi_tablosu.getModel();
             model.setRowCount(0);
-            while (oku.next()) { 
-                Object [] ekle = {oku.getInt("id"), oku.getString("adsoyad"), oku.getString("unvani"), oku.getString("ceptelefonu"), oku.getString("dahilinumarasi"), oku.getString("gorevyeri")};
+            while (oku.next()) {
+                Object[] ekle = {oku.getInt("id"), oku.getString("adsoyad"), oku.getString("unvani"), oku.getString("ceptelefonu"), oku.getString("dahilinumarasi"), oku.getString("gorevyeri")};
                 model.addRow(ekle);
                 lblKayitSayisi.setText("Kayıt : " + String.valueOf(model.getRowCount()));
             }
-            
+
         } catch (SQLException | ClassNotFoundException ex) {
             JOptionPane.showMessageDialog(this, ex);
         }
     }//GEN-LAST:event_tfCepKeyReleased
 
     private void tfDahiliKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfDahiliKeyReleased
-     try {
+        try {
             ResultSet oku = baglan.oku(tfDahili.getText(), 0d);
             DefaultTableModel model = (DefaultTableModel) kisi_tablosu.getModel();
             model.setRowCount(0);
-            while (oku.next()) { 
-                Object [] ekle = {oku.getInt("id"), oku.getString("adsoyad"), oku.getString("unvani"), oku.getString("ceptelefonu"), oku.getString("dahilinumarasi"), oku.getString("gorevyeri")};
+            while (oku.next()) {
+                Object[] ekle = {oku.getInt("id"), oku.getString("adsoyad"), oku.getString("unvani"), oku.getString("ceptelefonu"), oku.getString("dahilinumarasi"), oku.getString("gorevyeri")};
                 model.addRow(ekle);
                 lblKayitSayisi.setText("Kayıt : " + String.valueOf(model.getRowCount()));
             }
-            
+
         } catch (SQLException | ClassNotFoundException ex) {
             JOptionPane.showMessageDialog(this, ex);
         }        // TODO add your handling code here:
     }//GEN-LAST:event_tfDahiliKeyReleased
 
     private void tfUnvanKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfUnvanKeyReleased
-     try {
+        try {
             ResultSet oku = baglan.oku(tfUnvan.getText(), 0);
             DefaultTableModel model = (DefaultTableModel) kisi_tablosu.getModel();
             model.setRowCount(0);
-            while (oku.next()) { 
-                Object [] ekle = {oku.getInt("id"), oku.getString("adsoyad"), oku.getString("unvani"), oku.getString("ceptelefonu"), oku.getString("dahilinumarasi"), oku.getString("gorevyeri")};
+            while (oku.next()) {
+                Object[] ekle = {oku.getInt("id"), oku.getString("adsoyad"), oku.getString("unvani"), oku.getString("ceptelefonu"), oku.getString("dahilinumarasi"), oku.getString("gorevyeri")};
                 model.addRow(ekle);
                 lblKayitSayisi.setText("Kayıt : " + String.valueOf(model.getRowCount()));
             }
-            
+
         } catch (SQLException | ClassNotFoundException ex) {
             JOptionPane.showMessageDialog(this, ex);
         }        // TODO add your handling code here:
@@ -325,9 +325,6 @@ public class ListeForm extends javax.swing.JFrame {
         System.out.println(model.getValueAt(seciliSatir, 0));
     }//GEN-LAST:event_kisi_tablosuMouseClicked
 
-    
-    
-    
     public static void main(String args[]) {
 
         try {
@@ -365,7 +362,7 @@ public class ListeForm extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable kisi_tablosu;
+    public javax.swing.JTable kisi_tablosu;
     private javax.swing.JLabel lblKayitSayisi;
     private javax.swing.JMenu mnKayit;
     private javax.swing.JTextField tfAra;
