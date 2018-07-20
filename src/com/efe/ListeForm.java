@@ -5,6 +5,7 @@
  */
 package com.efe;
 
+import java.awt.event.MouseEvent;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -320,9 +321,14 @@ public class ListeForm extends javax.swing.JFrame {
     }//GEN-LAST:event_mnKayitMouseClicked
 
     private void kisi_tablosuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_kisi_tablosuMouseClicked
-        DefaultTableModel model = (DefaultTableModel) kisi_tablosu.getModel();
-        int seciliSatir = kisi_tablosu.getSelectedRow();
-        System.out.println(model.getValueAt(seciliSatir, 0));
+        if (evt.getClickCount() == 2) {
+            DefaultTableModel model = (DefaultTableModel) kisi_tablosu.getModel();
+            int seciliSatir = kisi_tablosu.getSelectedRow();
+            System.out.println(model.getValueAt(seciliSatir, 0));
+            DuzenleForum dzfrm = new DuzenleForum(seciliSatir);
+            dzfrm.setVisible(true);
+            dzfrm.setTitle(String.valueOf(model.getValueAt(seciliSatir, 0)));
+        }
     }//GEN-LAST:event_kisi_tablosuMouseClicked
 
     public static void main(String args[]) {
