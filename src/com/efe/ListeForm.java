@@ -324,10 +324,13 @@ public class ListeForm extends javax.swing.JFrame {
         if (evt.getClickCount() == 2) {
             DefaultTableModel model = (DefaultTableModel) kisi_tablosu.getModel();
             int seciliSatir = kisi_tablosu.getSelectedRow();
-            System.out.println(model.getValueAt(seciliSatir, 0));
-            DuzenleForum dzfrm = new DuzenleForum(seciliSatir);
-            dzfrm.setVisible(true);
-            dzfrm.setTitle(String.valueOf(model.getValueAt(seciliSatir, 0)));
+            int ID = (Integer) model.getValueAt(seciliSatir, 0);
+            int sor = JOptionPane.showConfirmDialog(this, "Düzenleme ekranı açılacak\nEmin misiniz ?", "UYARI", 2);
+            if (sor == 0) {
+                DuzenleForum dzfrm = new DuzenleForum(ID);
+                dzfrm.setVisible(true);
+                dzfrm.setTitle("Kayıt Düzeltme Formu");
+            }
         }
     }//GEN-LAST:event_kisi_tablosuMouseClicked
 
@@ -340,15 +343,11 @@ public class ListeForm extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ListeForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ListeForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ListeForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(ListeForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+
         //</editor-fold>
 
         /* Create and display the form */
